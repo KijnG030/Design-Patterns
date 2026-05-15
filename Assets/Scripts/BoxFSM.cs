@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BoxFSM
+namespace BoxFSM
 {
 /*    
 	State machine for the box
@@ -10,4 +10,26 @@ public class BoxFSM
 	while in spinning state it is just a timer running for the amount of time you want the suspense of the box to be
 	Payout state shows the weapon the player got from the box and the player can take it so the box goes back to Idle state
 */
+
+	public enum BoxStates
+	{
+		Idle,
+		Spinning,
+		Payout
+	}
+
+	public enum BoxTriggers
+	{
+		PlayereInteract,
+		BoxTimer
+	}
+
+
+	public interface Istates
+	{
+		BoxStates State { get; }
+
+
+	}
+
 }
